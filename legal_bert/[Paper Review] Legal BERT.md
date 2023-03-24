@@ -5,7 +5,7 @@ paper: https://arxiv.org/pdf/2010.02559.pdf<br><br><br>
 
 BERT는 여러 NLP 태스크들에서 괄목할만한 퍼포먼스를 보이고 있지만, 특수한 도메인들에 적용하는 것에 관해서는 연구가 덜 된편이다. 우리는 법률 도메인에 중점을 두고,  BERT 모델을 다운스트림 법률 태스크들에 적용해볼 것이다.<br><br>
 
-![](./legal_bert_imgs/legal_bert02.png)<br>
+![BERT base Model의 architecture](./legal_bert_imgs/legal_bert02.png)<br>
  
 
 BERT의 적용 방법은<br>
