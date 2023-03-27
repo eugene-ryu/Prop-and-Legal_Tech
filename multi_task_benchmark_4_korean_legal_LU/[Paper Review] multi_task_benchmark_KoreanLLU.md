@@ -78,3 +78,13 @@ GPT2에 기초한 encoder-only 모델로, text classification 문제에서 m5(en
 
 마지막으로 json 포맷으로 문서를 저장했는데, 여기에는 (1) 메타 정보, (2) 판결, (3) 청구의 요지, (4) 어필, (5) 사실,주장,추론,결론등이 합쳐진 결과를 포함되어 있다.<br>
 
+## 실험<br>
+- learning rate: 3e-5 ~ 1e-4<br>
+- batch size: 8 ~ 16<br>
+- optimizer: AdamW<br><br>
+
+mt5-small의 파인튜닝을 위해서 google/mt5-small 체크 포인트를 사용했고, 엘큐브(LCUBE)를 위해서는 메가트론 라이브러리(Megatron library)를 사용해서, 바닥부터 GPT2를 판례 코퍼스(PRECEDENT CORPUS)와 모두, 위키 데이터로 사전 학습시켰다. <br>
+또한, 형태소 단위 바이트 레벨 BPE를 tokenization을 위해 사용했다 (한국어는 형태소 변화가 변화무쌍한 고착어라서)<br><br>
+
+### 메트릭<br>
+CASE NAME, STATUTE, LJP-CIVIL tasks를 위해서는 정확도(accuracy, 라벨과 string이 정확하게 동일하면 맞은 것으로 간주)를 사용했고, LJP-CRIMINAL tasks를 위해선 각 필드(벌금/노역형/노역없는 수감)마다 F1 스커ㅗ어를 사용했다. <br><br>
