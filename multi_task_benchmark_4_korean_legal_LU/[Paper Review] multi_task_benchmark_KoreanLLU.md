@@ -87,4 +87,9 @@ mt5-small의 파인튜닝을 위해서 google/mt5-small 체크 포인트를 사�
 또한, 형태소 단위 바이트 레벨 BPE를 tokenization을 위해 사용했다 (한국어는 형태소 변화가 변화무쌍한 고착어라서)<br><br>
 
 ### 메트릭<br>
-CASE NAME, STATUTE, LJP-CIVIL tasks를 위해서는 정확도(accuracy, 라벨과 string이 정확하게 동일하면 맞은 것으로 간주)를 사용했고, LJP-CRIMINAL tasks를 위해선 각 필드(벌금/노역형/노역없는 수감)마다 F1 스커ㅗ어를 사용했다. <br><br>
+CASE NAME, STATUTE, LJP-CIVIL tasks를 위해서는 정확도(accuracy, 라벨과 string이 정확하게 동일하면 맞은 것으로 간주)를 사용했고, LJP-CRIMINAL tasks를 위해선 각 필드(벌금/노역형/노역없는 수감)마다 F1 스코어를 사용했다. <br><br>
+
+![](./imgs/benchmark_result1.png)<br>
+![](./imgs/benchmark_result2.png)<br><br>
+
+
