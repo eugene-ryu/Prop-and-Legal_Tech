@@ -1,11 +1,11 @@
-![LEGAL-BERT: The Muppets straight out of Law School](./legal_bert_imgs/legal_bert00.png)<br>
+![LEGAL-BERT: The Muppets straight out of Law School](./imgs/legal_bert00.png)<br>
 paper: https://arxiv.org/pdf/2010.02559.pdf<br><br><br>
 
 ## Abstract <br>
 
 BERT는 여러 NLP 태스크들에서 괄목할만한 퍼포먼스를 보이고 있지만, 특수한 도메인들에 적용하는 것에 관해서는 연구가 덜 된편이다. 우리는 법률 도메인에 중점을 두고,  BERT 모델을 다운스트림 법률 태스크들에 적용해볼 것이다.<br><br>
 
-![BERT base Model의 architecture](./legal_bert_imgs/legal_bert02.png)<br>
+![BERT base Model의 architecture](./imgs/legal_bert02.png)<br>
  
 
 BERT의 적용 방법은<br>
@@ -57,7 +57,7 @@ CONTRACTS-NER: contract header, dispute resolution, lease details의 세 가지 
 
 
 ## Tune your Muppets! (직역하자면 손가락 인형들을 튜닝해라!인데.. task에 맞춘 튜닝 시작)<br>
-![](./legal_bert_imgs/legal_bert03.png)<br>
+![](./imgs/legal_bert03.png)<br>
 여기에서 푸른색 계열로 표시된 부분들이 Muppet 소리를 듣는, LEGAL-BERT variants<br><br>
 
 원래 BERT 논문에서는, Grid Search를 활용한 최소한의 하이퍼파라미터 튜닝 전략을 아래와 같이 소개했다<br>
@@ -86,8 +86,8 @@ CONTRACTS-NER: contract header, dispute resolution, lease details의 세 가지 
 
 
 ## Experiment Results<br>
-![](./legal_bert_imgs/legal_bert04.png)<br>
-![](./legal_bert_imgs/legal_bert05.png)<br><br>
+![](./imgs/legal_bert04.png)<br>
+![](./imgs/legal_bert05.png)<br><br>
 
 
 32% 파라미터만을 가진 LEGAL-BERT-SMALL 모델 성능이 상당히 눈에 띄는데, CONTRACT HEADER나 LEASE DETAILS에서 괜찮은 성능을 보였다 (안타깝게도 DISPUTE RESOLUTION에서는 그다지 좋은 성능을 보이지 못했다)<br>
