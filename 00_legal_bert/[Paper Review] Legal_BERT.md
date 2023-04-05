@@ -20,7 +20,7 @@ BERT의 적용 방법은<br>
 
 ## Specifications for Experiment of Legal BERT<br>
 
-Training corpora (트레이닝할 때 쓴 데이터셋들): 입법관련(legislation), 소송 사건들(court cases), 계약관련(contracts) 등의 영어 법률 문서를 12GB 가량 수집해서 사용했다.<br>
+Training corpora(트레이닝할 때 쓴 데이터셋들): 입법관련(legislation), 소송 사건들(court cases), 계약관련(contracts) 등의 영어 법률 문서를 12GB 가량 수집해서 사용했다.<br>
 
 Legal BERT FP (Further Pre-training BERT 모델): 기존 BERT모델에 도메인 특화(법률) 데이터로 추가 사전 학습을 진행했다. 원본 BERT에서는 추가 스텝을 최대 100k하라고 했지만, Legal BERT에서는 최대 500k 스텝까지 늘려서 진행했다. 이는 다운스트림 태스크에 맞춰서 파인 튜닝을 진행할 때, 연장시킨 도메인 내에서의 사전 학습이 어떤 영향을 끼치는지- 알아보기 위해서였다.<br>
 
@@ -47,12 +47,12 @@ Gradient Optimizer: Adam<br>
 Learning rate: 0.0001<br><br><br>
  
 
-Legal NLP Tasks: 태스크는 text classification과 sequence tagging의 두 가지이다. <br><br>
+Legal NLP Tasks: 태스크는 text classification(텍스트 분류)과 sequence tagging(시퀀스 태깅)의 두 가지이다. <br><br>
 
 
 EURLEX 57k: 여러 레이블이 있는 EU 법률 관련, text classification 데이터셋<br>
 ECHR-CASES: European Court of Human Rights에서의 케이스들을 모아둔, binary/multi-label text classification 데이터셋<br>
-CONTRACTS-NER: contract header, dispute resolution, lease details의 세 가지 항목으로 이뤄진, US 계약건들에 대한 Named Entity Recognition을 위한 데이터셋<br><br><br>
+CONTRACTS-NER: contract header(계약 헤더), dispute resolution(분쟁 해결), lease details(임대 내역)의 세 가지 항목으로 이뤄진, US 계약건들에 대한 Named Entity Recognition(NER)을 위한 데이터셋<br><br><br>
  
 
 
@@ -90,7 +90,7 @@ CONTRACTS-NER: contract header, dispute resolution, lease details의 세 가지 
 ![](./imgs/legal_bert05.png)<br><br>
 
 
-32% 파라미터만을 가진 LEGAL-BERT-SMALL 모델 성능이 상당히 눈에 띄는데, CONTRACT HEADER나 LEASE DETAILS에서 괜찮은 성능을 보였다 (안타깝게도 DISPUTE RESOLUTION에서는 그다지 좋은 성능을 보이지 못했다)<br>
+32% 파라미터만을 가진 LEGAL-BERT-SMALL 모델 성능이 상당히 눈에 띄는데, CONTRACT HEADER나 LEASE DETAILS에서 괜찮은 성능을 보였다 (안타깝게도 DISPUTE RESOLUTION-분쟁 해결-에서는 그다지 좋은 성능을 보이지 못했다)<br>
 
 큰 튜닝이 없는 BERT-BASE도 괜찮은 성능을 보여주지만, 아무래도 직접적으로 법률에 관련된 사안들에 대해서는 LEGAL-BERT variants가 더 성능이 좋았다.<br>
 
