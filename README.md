@@ -1,2 +1,2 @@
-# legal_AI
- an Artificial Intelligence for Legal Tech
+# PropTech and LegalTech
+ an Artificial Intelligence for PropTech and LegalTech
